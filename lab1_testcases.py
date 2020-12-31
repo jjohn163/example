@@ -3,7 +3,12 @@ import io, sys
 from planets import *
 
 class Test_planets(unittest.TestCase):
+    def setUp(self):
+        pass
 
+    def tearDown(self):
+        pass
+    
     def test_02(self):
         self.assertEqual(temp(), 9, msg="Failure in temp()")
     def test_01(self):
