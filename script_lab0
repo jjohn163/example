@@ -5,7 +5,7 @@ set -e
 
 # run the student tests
 echo "RUNNING STUDENT TEST CASES"
-python3 planets_tests.py > out
+python3 planets_tests.py
 
 #run coverage, will fail and kill the script if coverage is less than 100%
 echo "RUNNING CODE COVERAGE"
