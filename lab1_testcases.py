@@ -1,5 +1,6 @@
 import unittest
-import io, sys
+import io
+import sys sys.tracebacklimit = 0
 from planets import *
 
 class Test_planets(unittest.TestCase):
