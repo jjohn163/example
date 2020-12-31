@@ -1,15 +1,8 @@
 import unittest
-import io
-import sys sys.tracebacklimit = 0
+import io, sys
 from planets import *
 
 class Test_planets(unittest.TestCase):
-    def setUp(self):
-        pass
-
-    def tearDown(self):
-        pass
-    
     def test_02(self):
         self.assertEqual(temp(), 9, msg="Failure in temp()")
     def test_01(self):
@@ -21,4 +14,4 @@ class Test_planets(unittest.TestCase):
         
 
 if __name__ == "__main__":
-        unittest.main()
+        unittest.main(verbosity=0)
