@@ -2,6 +2,11 @@ import unittest
 import io, sys
 from planets import *
 
+import os
+fd = os.open('/dev/null',os.O_WRONLY)
+savefd = os.dup(2)
+os.dup2(fd,2)
+
 class Test_planets(unittest.TestCase):
     def test_02(self):
         self.assertEqual(temp(), 9, msg="Failure in temp()")
