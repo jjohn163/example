@@ -10,8 +10,7 @@ python3 -m coverage report -m --fail-under=100 --omit=planets_tests.py
 
 #run the hidden test cases
 echo "RUNNING INTSRUCTOR TEST CASES"
-echo "hey"
 curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o lab1_testcases.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/lab1_testcases.py
-python3 lab1_testcases.py > out
+python3 lab1_testcases.py
 
 echo "TESTING COMPLETE"
