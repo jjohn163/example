@@ -4,7 +4,7 @@ from planets import *
 
 class Test_planets(unittest.TestCase):
 
-    def test_01(self):
+    def test_02(self):
         self.assertEqual(temp(), 9)
     def test_01(self):
         sys.stdin = io.StringIO("136")
