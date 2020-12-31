@@ -4,13 +4,13 @@
 set -e
 
 #run coverage, will fail and kill the script if coverage is less than 100%
-echo "RUNNING STUDENT TEST CASES AND CODE COVERAGE"
+echo "\n\n\nRUNNING STUDENT TEST CASES AND CODE COVERAGE\n"
 python3 -m coverage run -m unittest planets_tests.py
 python3 -m coverage report -m --fail-under=100 --omit=planets_tests.py
 
 #run the hidden test cases
-echo "RUNNING INTSRUCTOR TEST CASES"
+echo "\n\n\nRUNNING INTSRUCTOR TEST CASES\n"
 curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o lab1_testcases.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/lab1_testcases.py
 python3 lab1_testcases.py
 
-echo "TESTING COMPLETE"
+echo "\n\n\nTESTING COMPLETE"
