@@ -5,12 +5,17 @@ set -e
 
 #run coverage, will fail and kill the script if coverage is less than 100%
 echo "RUNNING STUDENT TEST CASES AND CODE COVERAGE"
-python3 -m coverage run -m unittest discover -p "*test*.py"
+python3 -m coverage run -a -m unittest lab1_test_cases.py
+python3 -m coverage run -a -m unittest location_tests.py
+python3 -m coverage run -a -m unittest sample_test_cases.py
 python3 -m coverage report -m --fail-under=100 --omit=lab1_test_cases.py,location_tests.py,sample_test_cases.py,location.py
 
 #run the hidden test cases
 echo "RUNNING INTSRUCTOR TEST CASES"
-curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o lab0_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Labs/Lab00/lab0_tests.py
-python3 lab0_tests.py
+curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o lab1_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Labs/Lab01/soln/lab1_acceptance_tests.py
+python3 lab1_acceptance_tests.py
+curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o location_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Labs/Lab01/soln/location_acceptance_tests.py
+python3 location_acceptance_tests.py
+
 
 echo "TESTING COMPLETE"
