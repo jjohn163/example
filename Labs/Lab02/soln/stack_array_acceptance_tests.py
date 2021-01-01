@@ -1,7 +1,7 @@
 import unittest
 from stack_array import Stack
 #from stack_linked import Stack
-from timeout_decorator import timeout
+
 
 ''' Add later if timing tests can be done and spec is clarified:
         Check that ALL methods are O(1)
@@ -11,14 +11,14 @@ __unittest = True
         
         
 class TestLab2(unittest.TestCase):
-    @timeout(0.5)
+
     def test_init(self):
         stack = Stack(5)
         self.assertTrue(stack.is_empty())
         self.assertFalse(stack.is_full())
         self.assertEqual(stack.size(),0)
 
-    @timeout(0.5)
+
     def test_is_empty(self):
         stack = Stack(5)
         self.assertTrue(stack.is_empty())
@@ -27,7 +27,7 @@ class TestLab2(unittest.TestCase):
         stack.pop()
         self.assertTrue(stack.is_empty())
 
-    @timeout(0.5)
+
     def test_is_full(self):
         stack = Stack(5)
         self.assertFalse(stack.is_full())
@@ -40,7 +40,6 @@ class TestLab2(unittest.TestCase):
         stack.pop()
         self.assertFalse(stack.is_full())
 
-    @timeout(0.5)
     def test_push(self):
         stack = Stack(5)
         stack.push(11)
@@ -63,7 +62,6 @@ class TestLab2(unittest.TestCase):
         self.assertTrue(stack.is_full())
         self.assertEqual(stack.peek(), 15)
 
-    @timeout(0.5)
     def test_pop(self):
         stack = Stack(5)
         self.assertRaises(IndexError, stack.pop)
@@ -88,7 +86,6 @@ class TestLab2(unittest.TestCase):
         self.assertEqual(stack.size(), 0)
         self.assertTrue(stack.is_empty())
 
-    @timeout(0.5)
     def test_peek(self):
         stack = Stack(5)
         self.assertRaises(IndexError, stack.peek)
@@ -111,7 +108,6 @@ class TestLab2(unittest.TestCase):
         self.assertEqual(stack.peek(), 15)
         self.assertEqual(stack.size(), 5)
 
-    @timeout(0.5)
     def test_size(self):
         stack = Stack(5)
         self.assertEqual(stack.size(), 0)
@@ -126,7 +122,6 @@ class TestLab2(unittest.TestCase):
         stack.push(15)
         self.assertEqual(stack.size(), 5)
 
-    @timeout(0.5)
     def test_stack_one(self): # boundary case
         stack = Stack(1)
         self.assertRaises(IndexError, stack.pop)
@@ -144,7 +139,6 @@ class TestLab2(unittest.TestCase):
         self.assertFalse(stack.is_full())
         self.assertEqual(stack.size(),0)
 
-    @timeout(0.5)
     def test_stack_pushPopCombo_with_strings_and_floats_and_Nones(self):
         s = Stack(11)
         s.push('stuff')
@@ -238,7 +232,6 @@ class TestLab2(unittest.TestCase):
         self.assertEqual('stuff', s.pop())
         self.assertEqual(0, s.size())
 
-    @timeout(0.5)
     def test_everything(self):
         s = Stack(100)
         for i in range(100):
@@ -272,7 +265,6 @@ class TestLab2(unittest.TestCase):
             self.assertRaises(IndexError, s.pop)
             self.assertRaises(IndexError, s.peek)
             
-    @timeout(2)
     def test_peek_size_BigO(self):
         size = 100000
         s = Stack(size)
@@ -281,7 +273,6 @@ class TestLab2(unittest.TestCase):
             s.push(i)
             self.assertEqual(i, s.peek())
 
-    @timeout(2)
     def test_is_empty_is_full_BigO(self):
         size = 100000
         s = Stack(size)
@@ -290,7 +281,6 @@ class TestLab2(unittest.TestCase):
             s.push(i)
             self.assertFalse(s.is_empty())
 
-    @timeout(2)
     def test_is_empty_is_full_BigO(self):
         size = 100000
         s = Stack(size)
