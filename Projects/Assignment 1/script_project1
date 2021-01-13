@@ -17,6 +17,6 @@ timeout 10 python3 base_convert_acceptance_tests.py
 curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o bears_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Projects/Assignment%201/soln/bears_acceptance_tests.py
 timeout 35 python3 bears_acceptance_tests.py
 curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o perm_lex_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Projects/Assignment%201/soln/perm_lex_acceptance_tests.py
-timeout 25 python3 perm_lex_acceptance_tests.py
+timeout 10 python3 perm_lex_acceptance_tests.py
 
 echo "TESTING COMPLETE"
