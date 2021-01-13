@@ -11,8 +11,8 @@ python3 -m coverage report -m --fail-under=100 --omit=stack_tests.py,stack_linke
 #run the hidden test cases
 echo "RUNNING INTSRUCTOR TEST CASES"
 curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o stack_array_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Labs/Lab02/soln/stack_array_acceptance_tests.py
-python3 stack_array_acceptance_tests.py
-curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o stack_linked_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Labs/Lab02/soln/stack_linked_acceptance_tests.py
-python3 stack_linked_acceptance_tests.py
+timeout 11 python3 stack_array_acceptance_tests.py
+curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o stack_linked_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Labs/Lab02/soln/stack_linked_acceptance_tests%20.py
+timeout 11 python3 stack_linked_acceptance_tests.py
 
 echo "TESTING COMPLETE"
