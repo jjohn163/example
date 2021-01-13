@@ -107,19 +107,5 @@ class TestAssign1(unittest.TestCase):
         self.assertEqual(len(x), 5040)
 
 
-    def test_perm_gen_lex_08_acemnvxz(self):
-        x = perm_gen_lex('acemnvxz')
-        self.assertEqual(len(x), 40320)
-
-
-    def test_perm_gen_lex_09_acemnovxz(self):
-        x = perm_gen_lex('acemnovxz')
-        self.assertEqual(len(x), 362880)
-
-
-    def test_perm_gen_lex_10_aaaaaaaaa(self):
-        x = perm_gen_lex('aaaaaaaaa')
-        self.assertEqual(len(x), 362880)
-
 if __name__ == "__main__":
     unittest.main()
