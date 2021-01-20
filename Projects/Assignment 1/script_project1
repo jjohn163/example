@@ -12,13 +12,13 @@ python3 -m coverage report -m --fail-under=100 --omit=base_convert_testcases.py,
 
 #run the hidden test cases
 echo "RUNNING INTSRUCTOR TEST CASES"
-curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o base_convert_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Projects/Assignment%201/soln/base_convert_acceptance_tests.py
+curl -o base_convert_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%201/soln/base_convert_acceptance_tests.py
 echo "RUNNING BASE CONVERT TEST CASES"
 python3 base_convert_acceptance_tests.py
-curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o bears_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Projects/Assignment%201/soln/bears_acceptance_tests.py
+curl -o bears_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%201/soln/bears_acceptance_tests.py
 echo "RUNNING BEARS TEST CASES"
 python3 bears_acceptance_tests.py
-curl -H 'Authorization: token e3bbdd2745bb74f81340e5c4e0fb806345cb5c8e' -o perm_lex_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/CPE202_TestCases/main/Projects/Assignment%201/soln/perm_lex_acceptance_tests.py
+curl -o perm_lex_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%201/soln/perm_lex_acceptance_tests.py
 echo "RUNNING PERM LEX TEST CASES"
 python3 perm_lex_acceptance_tests.py
 
