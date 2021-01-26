@@ -5,7 +5,7 @@ set -e
 
 #run coverage, will fail and kill the script if coverage is less than 100%
 echo "RUNNING STUDENT TEST CASES AND CODE COVERAGE"
-python3 -m coverage run -a -m unittest stack_tests.py
+python3 -m coverage run -a -m unittest queue_tests.py
 python3 -m coverage report -m --fail-under=100 --omit=queue_tests.py,queue_linked.py
 
 #run the hidden test cases
