@@ -6,13 +6,17 @@ set -e
 #run coverage, will fail and kill the script if coverage is less than 100%
 echo "RUNNING STUDENT TEST CASES AND CODE COVERAGE"
 python3 -m coverage run -a -m unittest stack_tests.py
-python3 -m coverage report -m --fail-under=100 --omit=stack_tests.py,stack_linked.py
+python3 -m coverage report -m --fail-under=100 --omit=queue_tests.py,queue_linked.py
 
 #run the hidden test cases
 echo "RUNNING INTSRUCTOR TEST CASES"
-curl -o stack_array_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab02/soln/stack_array_acceptance_tests.py
-timeout 11 python3 stack_array_acceptance_tests.py
-curl -o stack_linked_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab02/soln/stack_linked_acceptance_tests%20.py
-timeout 11 python3 stack_linked_acceptance_tests.py
+
+curl -o queue_array_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab03/soln/queue_array_acceptance_tests.py
+echo "RUNNING QUEUE ARRAY TESTS"
+timeout 8 python3 queue_array_acceptance_tests.py
+
+curl -o queue_linked_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab03/soln/queue_linked_acceptance_tests.py
+echo "RUNNING QUEUE LINKED TESTS"
+timeout 8 python3 queue_linked_acceptance_tests.py
 
 echo "TESTING COMPLETE"
