@@ -10,7 +10,7 @@ python3 -m coverage run -a -m unittest exp_eval_tests.py
 python3 -m coverage report -m --fail-under=100 --omit=stack_tests.py,exp_eval_tests.py
 
 #run the hidden test cases
-echo "RUNNING INTSRUCTOR TEST CASES"
+echo "RUNNING INTSRUCTOR TEST CASES FOR EXP_EVAL"
 curl -o exp_eval_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%202/soln/exp_eval_acceptance_tests.py
 timeout 10 python3 exp_eval_acceptance_tests.py
 
