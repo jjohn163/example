@@ -192,8 +192,6 @@ class test_expressions(unittest.TestCase):
         self.assertEqual(prefix_to_postfix("+ + 2 - - + + * 38 1.2 / / * 3.6 ** 1.8 ** .25 1.7 2 ** 5 3 / 23 ** 1.1 2.2 / 2.4 5 1 - * * 1.6 ** 3 9 2.8 ** 3 / 6.2 ** 4 - - * 12.8 ** 2 1.1 / 4.4 3.2 / 1.1 ** 5.2 7.7"), "2 38 1.2 * 3.6 1.8 .25 1.7 ** ** * 2 / 5 3 ** / + 23 1.1 2.2 ** / + 2.4 5 / - 1 - + 1.6 3 9 ** * 2.8 * 3 6.2 4 12.8 2 1.1 ** * 4.4 3.2 / - 1.1 5.2 7.7 ** / - ** / ** - +")
         self.assertEqual(prefix_to_postfix("+ 3 / * 4 2 ** - 1 5 ** 2 3"), "3 4 2 * 1 5 - 2 3 ** ** / +")
         self.assertEqual(prefix_to_postfix("+ 3 * 4 ** / 2 ** - 1 5 2 3"), "3 4 2 1 5 - 2 ** / 3 ** * +")
-        self.assertEqual(prefix_to_postfix("+ 3 / * 4 2 >> - 1 5 << 2 3"), "3 4 2 * 1 5 - 2 3 << >> / +")
-        self.assertEqual(prefix_to_postfix(">> 3 << 4 ** >> 2 ** << 1 5 2 3"), "3 4 2 1 5 << 2 ** >> 3 ** << >>")
 
     def test_18_prefix_to_postfix_single_value(self):
         self.assertEqual("25", prefix_to_postfix("25"))
