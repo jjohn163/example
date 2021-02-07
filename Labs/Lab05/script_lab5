@@ -1,18 +1,17 @@
 #!/bin/bash
-
 # exit when something errors
 set -e
 
 #run coverage, will fail and kill the script if coverage is less than 100%
 echo "RUNNING STUDENT TEST CASES AND CODE COVERAGE"
-python3 -m coverage run -a -m unittest ordered_list_tests.py
-python3 -m coverage report -m --fail-under=100 --omit=ordered_list_tests.py
+python3 -m coverage run -a -m unittest binary_search_tree_tests.py
+python3 -m coverage run -a -m unittest queue_array_tests.py
+python3 -m coverage report -m --fail-under=100 --omit=binary_search_tree_tests.py,queue_array_tests.py
 
 #run the hidden test cases
 echo "RUNNING INTSRUCTOR TEST CASES"
-
-curl -o ordered_list_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab04/soln/ordered_list_acceptance_tests.py
+curl -o binary_search_tree_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab05/soln/binary_search_tree_acceptance_tests.py
 echo "RUNNING BINARY SEARCH TREE TESTS"
-timeout 5 python3 ordered_list_acceptance_tests.py
+timeout 5 python3 binary_search_tree_acceptance_tests.py
 
 echo "TESTING COMPLETE"
