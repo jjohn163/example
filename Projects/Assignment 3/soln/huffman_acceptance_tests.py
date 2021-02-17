@@ -53,8 +53,7 @@ class TestList(unittest.TestCase):
       huffman_encode("declaration.txt", "declaration_out.txt")
       # capture errors by running 'filecmp' on your encoded file with a *known* solution file
       self.assertTrue(filecmp.cmp("declaration_out.txt", "declaration_soln.txt"))
-      huffman_decode("declaration_out.txt", "declaration_decode.txt")
-      self.assertTrue(filecmp.cmp("declaration.txt", "declaration_decode.txt"))
+
 
 if __name__ == '__main__': 
    unittest.main()

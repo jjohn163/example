@@ -14,7 +14,7 @@ curl -o file2.txt https://raw.githubusercontent.com/jjohn163/example/main/Projec
 curl -o file2_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file2_soln.txt
 curl -o multiline.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/multiline.txt
 curl -o multiline_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/multiline_soln.txt
-
+sleep 5
 echo "RUNNING INTSRUCTOR TEST CASES"
 curl -o huffman_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/huffman_acceptance_tests.py
 timeout 10 python3 huffman_acceptance_tests.py
