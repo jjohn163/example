@@ -1,0 +1,16 @@
+#!/bin/bash
+# exit when something errors
+set -e
+
+#run coverage, will fail and kill the script if coverage is less than 100%
+echo "RUNNING STUDENT TEST CASES AND CODE COVERAGE"
+python3 -m coverage run -a -m unittest sep_chain_ht_tests.py
+python3 -m coverage report -m --fail-under=100 --omit=sep_chain_ht_tests.py
+
+#run the hidden test cases
+echo "RUNNING INTSRUCTOR TEST CASES"
+curl -o sep_chain_ht_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab08/soln/sep_chain_ht_acceptance_tests.py
+echo "RUNNING BINARY SEARCH TREE TESTS"
+timeout 5 python3 sep_chain_ht_acceptance_tests.py
+
+echo "TESTING COMPLETE"
