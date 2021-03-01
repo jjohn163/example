@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# exit when something errors
+set -e
+#navigate to folder with the code
+cd src
+#run the hidden test cases
+echo "DOWNLOADING FILES FOR TESTS"
+curl -o declaration.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/declaration.txt
+curl -o declaration_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/declaration_soln.txt
+curl -o file1.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file1.txt
+curl -o file1_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file1_soln.txt
+curl -o file2.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file2.txt
+curl -o file2_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file2_soln.txt
+curl -o multiline.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/multiline.txt
+curl -o multiline_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/multiline_soln.txt
+sleep 5
+echo "RUNNING INTSRUCTOR TEST CASES"
+curl -o huffman_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/huffman_acceptance_tests.py
+timeout 10 python3 huffman_acceptance_tests.py
+
+
+echo "TESTING COMPLETE"
