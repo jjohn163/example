@@ -2,22 +2,29 @@
 
 # exit when something errors
 set -e
-#navigate to folder with the code
-cd src
+
+echo "RUNNING STUDENT TEST CASES"
+python3 -m coverage run -a -m unittest has_quad_tests.py
+python3 -m coverage report -m --fail-under=100 --omit=has_quad_tests.py,concordance.py,concordance_tests.py
+
 #run the hidden test cases
 echo "DOWNLOADING FILES FOR TESTS"
-curl -o declaration.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/declaration.txt
-curl -o declaration_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/declaration_soln.txt
-curl -o file1.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file1.txt
-curl -o file1_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file1_soln.txt
-curl -o file2.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file2.txt
-curl -o file2_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/file2_soln.txt
-curl -o multiline.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/multiline.txt
-curl -o multiline_soln.txt https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/multiline_soln.txt
+curl -o declaration.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/declaration.txt
+curl -o declaration_sol.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/declaration_sol.txt
+curl -o file1.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/file1.txt
+curl -o file1_sol.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/file1_sol.txt
+curl -o file2.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/file2.txt
+curl -o file2_sol.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/file2_sol.txt
+curl -o dictionary_a-c.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/dictionary_a-c.txt
+curl -o dictionary_a-c_sol.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/dictionary_a-c_sol.txt
+curl -o stop_words.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/stop_words.txt
+curl -o stop_words_sol.txt https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/stop_words_sol.txt
 sleep 5
 echo "RUNNING INTSRUCTOR TEST CASES"
-curl -o huffman_acceptance_tests.py https://raw.githubusercontent.com/jjohn163/example/main/Projects/Assignment%203/soln/huffman_acceptance_tests.py
-timeout 10 python3 huffman_acceptance_tests.py
+curl -o hash_quad_acceptance_tests.py https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/hash_quad_acceptance_tests.py
+timeout 10 python3 hash_quad_acceptance_tests.py
+curl -o concordance_acceptance_tests.py https://github.com/jjohn163/example/blob/main/Projects/Assignment%204/soln/concordance_acceptance_tests.py
+timeout 10 python3 concordance_acceptance_tests.py
 
 
 echo "TESTING COMPLETE"
